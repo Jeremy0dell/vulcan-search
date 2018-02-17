@@ -1,5 +1,47 @@
+/******************************
+BODY AND FORMAT SECTION
+*******************************/
+
 body {
   margin: 0;
   padding: 0;
+  min-height: calc(100vh - 60px);
   font-family: sans-serif;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
+******************* MY THEME *******************
+Dark blue #205078
+Blue/grey #465A63
+Orange #FD6E44
+Bright white #FFFFFF
+Yellow #FDD46B
+Slightly off white #F2F2F2
+*/
+
+/******************************
+NAV AND FOOTER SECTION
+*******************************/
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.dark-bar {
+  background-color: #FD6E44;
+}
+
+.light-bar {
+  background-color: #FDD46B;
 }
