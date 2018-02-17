@@ -1,10 +1,7 @@
 import Papa from 'papaparse'
 import every from 'lodash/every'
 import cloneDeep from 'lodash/cloneDeep'
-/*
-  headers and data are csv
-  Also need SortedBy, Order, and Query
-*/
+
 export const arrangeTableData = (headers, data) => [ Papa.parse(headers).data[0], Papa.parse(data).data ]
 
 /*
@@ -13,9 +10,6 @@ export const arrangeTableData = (headers, data) => [ Papa.parse(headers).data[0]
   and rearange the order of the subarrays based on the sort output of the given index
   and the order
 */
-// function (a, b) {
-//   return (a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
-// }
 
 export const changeQuery = (data, query) => {
   if (!query) {
@@ -46,10 +40,6 @@ export const changeSort = (data, sortBy, order) => {
   ))
   console.log(result, data)
   return order === 'desc' ? [data[0], result.reverse()] : [data[0], result]
-
-  // const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'})
-  // const result = data.sort(collator.compare)
-  // return order === 'desc' ? result.reverse() : result
 }
 
 export const columnFilter = (data, colsHidden) => {
@@ -67,10 +57,6 @@ export const columnFilter = (data, colsHidden) => {
 
   return result
 }
-// [['rew','fds','xcv','fg'],
-// [['qwe','adsx','xcv','fgh'],
-// ['gter','hr','hj','kiu'],
-// ['xcv','dfg','ghj','yui']]]
 
 /*
   query performs a filter on the data, leaving only subarrays that contain the value of query

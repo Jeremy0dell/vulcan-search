@@ -7,7 +7,7 @@ import Form from './Form'
 import SearchResult from './SearchResult'
 
 const GoogleSearch = ({ form, handleChange }) =>
-  <div>
+  <div id="search-container" className="flex-between">
     {console.log(form)}
     <Form
       title={form.title}

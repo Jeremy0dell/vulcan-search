@@ -2,16 +2,28 @@
 BODY AND FORMAT SECTION
 *******************************/
 
+html, body, #root, #app, #app>div {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  min-height: calc(100vh - 60px);
-  font-family: sans-serif;
+  min-height: calc(100vh - 120px);
+  font-family: 'Roboto', sans-serif;
+  background-color: #465A63;
 }
 
 .flex-between {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 120px);
 }
 
 /*
@@ -33,15 +45,67 @@ NAV AND FOOTER SECTION
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
 }
 
 .dark-bar {
+  padding: 0px 10%;
+  height: 30px;
   background-color: #FD6E44;
+  color: #205078;
 }
 
 .light-bar {
+  padding: 0px 10%;
+  height: 30px;
   background-color: #FDD46B;
+  color: #205078;
+}
+
+/******************************
+GOOGLE SEARCH SECTION
+*******************************/
+
+#search-container {
+  width: 860px;
+  color: #f2f2f2;
+}
+
+.search-input {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#search-result {
+  height: 75px;
+  width: 600px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #fff;
+  border: '1px solid black',
+}
+
+.result {
+  padding: 0px 10px;
+}
+
+#result-1 {
+  width: 520px;
+  color: purple;
+  font-size: 20px;
+  text-overflow: ellipsis;
+}
+
+#result-2 {
+  color: green;
+  font-size: 12px;
+}
+
+#result-3 {
+  color: black;
+  font-size: 15px;
+  word-wrap: normal;
 }

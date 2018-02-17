@@ -1,15 +1,13 @@
 import React from 'react'
 
-const resultStyles = {
-  width: 600,
-  border: '1px solid black',
-}
-
 const SearchResult = ({ title, websiteUrl, description }) =>
-  <div style={resultStyles}>
-    <div>{title}</div>
-    <div>{websiteUrl}</div>
-    <div>{description}</div>
+  <div id="search-result">
+    <div id="result-1" className="result">{title}</div>
+    <div id="result-2" className="result">
+      {websiteUrl}
+      { websiteUrl && <span style={{ fontSize: 8 }}>&nbsp;&nbsp;▼</span> }
+    </div>
+    <div id="result-3" className="result">{description}</div>
   </div>
 
 export default SearchResult

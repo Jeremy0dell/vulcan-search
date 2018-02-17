@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
+import './App.css'
+
+import Landing from './components/Landing'
 import Nav from './components/Nav/'
 import Footer from './components/Footer'
 import GoogleSearch from './components/GoogleSearch'
@@ -11,11 +14,16 @@ import ConfigurableTable from './components/ConfigurableTable/'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id="app-body">
         <Nav />
-        <GoogleSearch />
-        <TitleScraper />
-        <ConfigurableTable />
+        <div className="flex-center">
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/search" component={GoogleSearch} />
+            <Route exact path="/title" component={TitleScraper} />
+            <Route exact path="/table" component={ConfigurableTable} />
+          </Switch>
+        </div>
         <Footer />
       </div>
     );
