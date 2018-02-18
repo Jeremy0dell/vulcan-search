@@ -14,6 +14,10 @@ body {
   background-color: #465A63;
 }
 
+a {
+  color: #f2f2f2;
+}
+
 .flex-between {
   display: flex;
   justify-content: space-between;
@@ -23,7 +27,64 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100% - 120px);
+  height: 100%;
+}
+
+/******************************
+GENERAL COMPONENTS SECTION
+*******************************/
+
+input{
+  font: 1em/1.25em Arial, Helvetica, sans-serif;
+}
+
+.input {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#search-container .input {
+  width: 250px;
+}
+
+table {
+  border-collapse: collapse;
+  color: black;
+}
+
+table, th, td {
+  border: 1px solid #FD6E44;
+}
+
+th, td {
+  width: 120px;
+}
+
+tr {
+  height: 40px;
+}
+
+td {
+  overflow: hidden;
+  text-align: center;
+}
+
+td:hover {
+  background-color: lightgrey;
+}
+
+th {
+  background-color: #205078;
+  color: #FDD46B;
+}
+
+th:hover {
+  background-color: #465A63;
+  color: #F2F2F2;
 }
 
 /*
@@ -50,14 +111,14 @@ NAV AND FOOTER SECTION
 .dark-bar {
   padding: 0px 10%;
   height: 30px;
-  background-color: #FD6E44;
-  color: #205078;
+  background-color: #205078;
+  color: #FD6E44;
 }
 
 .light-bar {
   padding: 0px 10%;
   height: 30px;
-  background-color: #FDD46B;
+  background-color: #FD6E44;
   color: #205078;
 }
 
@@ -70,14 +131,14 @@ GOOGLE SEARCH SECTION
   color: #f2f2f2;
 }
 
-.search-input {
-    width: 200px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+/* .search-input {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} */
 
 #search-result {
   height: 75px;
@@ -108,4 +169,54 @@ GOOGLE SEARCH SECTION
   color: black;
   font-size: 15px;
   word-wrap: normal;
+}
+
+/******************************
+TITLE SCRAPER SECTION
+*******************************/
+
+#title-container {
+  height: 400px;
+  width: 800px;
+  color: #fff;
+}
+
+#title-header {
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+#title-error {
+  font-size: 16px;
+  color: red
+}
+
+/******************************
+CONFIGURABLE TABLE SECTION
+*******************************/
+
+#table-container {
+  width: 100%;
+  margin: 0px 5%;
+  color: #fff;
+}
+
+#table-show-container {
+  width: 450px;
+}
+
+#table-body {
+  height: 100%;
+  width: 100%;
+  background-color: #F2F2F2;
+}
+
+#table-forms {
+  width: 450px;
+}
+
+#checkbox-group {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
 }

@@ -5,7 +5,7 @@ const Form = ({ title, websiteUrl, description, onChange }) =>
     <div>
       <div>Website Title</div>
       <input
-        className="search-input"
+        className="input"
         value={title}
         name="title"
         onChange={onChange}
@@ -15,7 +15,7 @@ const Form = ({ title, websiteUrl, description, onChange }) =>
     <div>
       <div>Website URL</div>
       <input
-        className="search-input"
+        className="input"
         value={websiteUrl}
         name="websiteUrl"
         onChange={onChange}
@@ -25,7 +25,7 @@ const Form = ({ title, websiteUrl, description, onChange }) =>
     <div>
       <div>Website Description</div>
       <textarea
-        className="search-input"
+        className="input"
         value={description}
         name="description"
         onChange={onChange}

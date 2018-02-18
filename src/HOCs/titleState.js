@@ -6,11 +6,26 @@ export const titleState = initialValues => compose(
   withState('titleState', 'updateTitleState', initialValues),
   withHandlers({
     handleTitleChange: props => event => {
-    props.updateTitleState({ ...props.titleState, showTitle: true, isError: false  })
+      props.updateTitleState({ ...props.titleState, showTitle: true, loading: true })
 
-    fetch('/ping', { url: event.target.value })
-    .then(res => props.updateTitleState({ ...props.titleState, showTitle: true, title: res.data.title }))
-    .catch(props.updateTitleState({ ...props.titleState, showTitle: true, isError: true }))
+      fetch('/ping', { url: event.target.value })
+      .then(res => {
+        if (typeof res.data === "string") {
+          props.updateTitleState({
+            ...props.titleState,
+            isError: true,
+            showTitle: false,
+            title: res.data
+          })
+        } else {
+          props.updateTitleState({
+            ...props.titleState,
+            isError: false,
+            showTitle: true,
+            title: res.data.title
+          })
+        }
+      })
     },
   }),
 )

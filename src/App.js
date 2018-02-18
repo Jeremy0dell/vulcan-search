@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div id="app-body">
         <Nav />
-        <div className="flex-center">
+        <div className="flex-center" style={{ height: 'calc(100% - 120px)' }}>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/search" component={GoogleSearch} />

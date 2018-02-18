@@ -7,15 +7,22 @@ import Form from './Form'
 import Title from './Title'
 
 const TitleScraper = ({ titleState, handleTitleChange }) =>
-  <div>
-    This is TitleScraper
-    <Form
-      handleTitleChange={handleTitleChange}
-    />
-    {console.log(titleState)}
-    { titleState.showTitle && <Title title={titleState.title} isError={titleState.isError} /> }
+  <div
+    id="title-container"
+    className="flex-center"
+    style={{ flexDirection: 'column' }}
+  >
+    <div id="title-header">TitleScraper</div>
+
+    <div id="title-error" style={{ visibility: !titleState.isError && 'hidden' }}>
+      Server responded with {titleState.title}
+    </div>
+
+    <Form handleTitleChange={handleTitleChange} />
+
+    <Title title={titleState.title} loading={titleState.loading} visible={titleState.showTitle} />
   </div>
 
 export default compose(
-  titleState({ showTitle: false, title: null, isError: null }),
+  titleState({ loading: false, showTitle: false, title: null, isError: null }),
 )(TitleScraper)

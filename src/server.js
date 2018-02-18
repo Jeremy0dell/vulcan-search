@@ -13,7 +13,7 @@ app.post('/ping', function (req, res) {
     if (err) {
       console.log('we have err', err)
       console.log('string is', err.toString())
-      res.status(400)
+      res.json(err.toString())
     }
     console.log(metadata)
     res.json(metadata)
@@ -21,7 +21,7 @@ app.post('/ping', function (req, res) {
 })
 
 app.post('/csv', (req, res) => {
-  
+
 })
 
 app.get('/', function (req, res) {

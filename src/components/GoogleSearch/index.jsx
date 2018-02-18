@@ -8,7 +8,6 @@ import SearchResult from './SearchResult'
 
 const GoogleSearch = ({ form, handleChange }) =>
   <div id="search-container" className="flex-between">
-    {console.log(form)}
     <Form
       title={form.title}
       websiteUrl={form.websiteUrl}

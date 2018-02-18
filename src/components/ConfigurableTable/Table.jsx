@@ -1,11 +1,12 @@
 import React from 'react'
+import Up from 'react-icons/lib/fa/chevron-up'
+import Down from 'react-icons/lib/fa/chevron-down'
 
-const Table = ({ tableData, handleHeaderClick }) =>
-  <div>
-    This is table
-    {console.log('tData is', tableData)}
-    <table style={{ width: '80%' }}>
-      <tbody>
+const Table = ({ tableData, sortedBy, order, handleHeaderClick }) =>
+  <div id="table-show-container">
+    <table id="table-body">
+      <thead>
+
         <tr>
           {
             tableData[0].map((header, idx) =>
@@ -15,10 +16,12 @@ const Table = ({ tableData, handleHeaderClick }) =>
               name={header}
               onClick={() => { handleHeaderClick(header) }}
             >
-              {header}
+              {header} { sortedBy === header && (order === 'asc' ? <Down /> : <Up />) }
             </th>)
           }
         </tr>
+        </thead>
+        <tbody>
         {
           tableData[1].map((subArray, idx) =>
           <tr key={idx}>
