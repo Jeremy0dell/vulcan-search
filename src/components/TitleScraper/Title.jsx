@@ -5,7 +5,7 @@ const Title = ({ title, loading, visible }) =>
     {
       loading ?
       <div>Loading...</div> :
-      <div>Title is: {title}</div>
+      <div>Website title is: {title}</div>
     }
   </div>
 

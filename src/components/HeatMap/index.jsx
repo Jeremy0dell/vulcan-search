@@ -14,7 +14,7 @@ const HeatMap = ({ heatmap, updateHeatmap }) =>
     <button
       onClick={() => updateHeatmap(heatmap === 'weekday' ? 'alphabetical' : 'weekday')}
     >
-      Toggle {heatmap === 'weekday' ? 'alphabetical' : 'weekday'} order
+      Click for {heatmap === 'weekday' ? 'alphabetical' : 'weekday'} order
     </button>
     <Plot
       data={heatmap === 'weekday' ? modifiedOrderedData : modifiedData}

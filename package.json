@@ -10,6 +10,7 @@
     "html-metadata": "^1.7.0",
     "javascript-natural-sort": "^0.7.1",
     "lodash": "^4.17.5",
+    "nodemon": "^1.15.0",
     "papaparse": "^4.3.7",
     "plotly.js": "^1.34.0",
     "react": "^16.2.0",
