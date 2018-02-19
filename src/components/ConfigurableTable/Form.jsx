@@ -46,18 +46,6 @@ const Form = ({
     </div>
     <button onClick={onClick}>{showTable ? 'Hide Table' : 'Generate Table'}</button>
     <button onClick={handleToggleChecks}>Enable/Disable Column Toggling</button>
-    {/* {
-      headers && <CheckboxGroup
-        id="checkbox-group"
-        value={colsHidden}
-        onChange={handleCheckCol}
-      >
-        {
-          showColsHidden && Papa.parse(headers).data[0].map((header, idx) =>
-          <label key={idx}><Checkbox value={header}/>{header}</label>)
-        }
-      </CheckboxGroup>
-    } */}
   </div>
 
 export default Form

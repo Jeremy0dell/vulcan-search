@@ -22,7 +22,6 @@ export const changeQuery = (data, query) => {
 }
 
 export const changeSort = (data, sortBy, order) => {
-  console.log('data is', data, sortBy, order)
   if (!sortBy) {
     return data
   }
@@ -38,7 +37,6 @@ export const changeSort = (data, sortBy, order) => {
     undefined,
     {numeric: true, sensitivity: 'base'}
   ))
-  console.log(result, data)
   return order === 'desc' ? [data[0], result.reverse()] : [data[0], result]
 }
 

@@ -11,8 +11,6 @@ app.post('/ping', function (req, res) {
 
   scrape(url, (err, metadata) => {
     if (err) {
-      console.log('we have err', err)
-      console.log('string is', err.toString())
       res.json(err.toString())
     }
     console.log(metadata)

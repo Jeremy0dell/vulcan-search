@@ -1,8 +1,6 @@
 import React from 'react'
 import { compose } from 'recompose'
 import every from 'lodash/every'
-import Papa from 'papaparse'
-import { Checkbox, CheckboxGroup } from 'react-checkbox-group'
 
 import { formData } from '../../HOCs/form'
 import { tableState } from '../../HOCs/tableState'
@@ -11,7 +9,7 @@ import { arrangeTableData, changeSort, changeQuery, columnFilter } from '../../u
 
 import Form from './Form'
 import Table from './Table'
-
+import Checkboxes from './Checkboxes'
 
 const ConfigurableTable = ({
   form,
@@ -38,18 +36,13 @@ const ConfigurableTable = ({
       handleToggleChecks={handleToggleChecks}
     />
     {
-      (form.headers && tabState.showColsHidden) ? <div>
-        <div>Check to show or hide columns</div>
-        <CheckboxGroup
-        id="checkbox-group"
-        value={tabState.colsHidden}
+      (form.headers && tabState.showColsHidden) ?
+      <Checkboxes
         onChange={handleCheckCol}
-      >
-        {
-          tabState.showColsHidden && Papa.parse(form.headers).data[0].map((header, idx) =>
-          <label key={idx}><Checkbox value={header}/>{header}</label>)
-        }
-      </CheckboxGroup></div> : <div />
+        colsHidden={tabState.colsHidden}
+        showColsHidden={tabState.showColsHidden}
+        headers={form.headers}
+      /> : <div />
     }
     { every([tabState.showTable, form.headers, form.data], x => !!x) && tabState.showTable ?
       <Table
