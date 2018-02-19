@@ -47,7 +47,7 @@ export const columnFilter = (data, colsHidden) => {
   let result = cloneDeep(data)
 
   colsHidden.forEach((string) => {
-    const idxToRemove = data[0].indexOf(string)
+    const idxToRemove = result[0].indexOf(string)
 
     if (idxToRemove > -1) {
       result[0].splice(idxToRemove, 1)

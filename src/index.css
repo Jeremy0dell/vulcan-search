@@ -38,6 +38,21 @@ input{
   font: 1em/1.25em Arial, Helvetica, sans-serif;
 }
 
+button {
+  background-color: #FD6E44;
+  border: 1px solid black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: darkorange;
+}
+
+
 .input {
   width: 300px;
   padding: 12px 20px;
@@ -51,12 +66,21 @@ input{
   width: 250px;
 }
 
-table {
-  border-collapse: collapse;
-  color: black;
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 
-table, th, td {
+table {
+  overflow-y:scroll;
+  overflow-x:scroll;
+  height: 400px;
+  width: 500px;
+  display:block;
+  border-collapse: collapse;
+}
+
+th, td {
   border: 1px solid #FD6E44;
 }
 
@@ -69,7 +93,8 @@ tr {
 }
 
 td {
-  overflow: hidden;
+  background-color: #f2f2f2;
+  color: #205078;
   text-align: center;
 }
 
@@ -85,6 +110,11 @@ th {
 th:hover {
   background-color: #465A63;
   color: #F2F2F2;
+}
+
+#landing {
+  color: #f2f2f2;
+  font-size: 24px;
 }
 
 /*
@@ -144,7 +174,6 @@ GOOGLE SEARCH SECTION
   height: 75px;
   width: 600px;
   overflow: hidden;
-  text-overflow: ellipsis;
   background-color: #fff;
   border: '1px solid black',
 }
@@ -157,6 +186,8 @@ GOOGLE SEARCH SECTION
   width: 520px;
   color: purple;
   font-size: 20px;
+  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -196,19 +227,8 @@ CONFIGURABLE TABLE SECTION
 *******************************/
 
 #table-container {
-  width: 100%;
-  margin: 0px 5%;
-  color: #fff;
-}
-
-#table-show-container {
-  width: 450px;
-}
-
-#table-body {
-  height: 100%;
-  width: 100%;
-  background-color: #F2F2F2;
+  width: 90%;
+  color: #f2f2f2;
 }
 
 #table-forms {

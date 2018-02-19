@@ -2,6 +2,7 @@ import React from 'react'
 
 const Form = ({ title, websiteUrl, description, onChange }) =>
   <div>
+    <h1>Google Search</h1>
     <div>
       <div>Website Title</div>
       <input

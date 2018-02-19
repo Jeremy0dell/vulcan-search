@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import GoogleSearch from './components/GoogleSearch'
 import TitleScraper from './components/TitleScraper/'
 import ConfigurableTable from './components/ConfigurableTable/'
-// import HeatMap from './components/HeatMap/'
+import HeatMap from './components/HeatMap/'
 
 class App extends Component {
   render() {
@@ -22,6 +22,8 @@ class App extends Component {
             <Route exact path="/search" component={GoogleSearch} />
             <Route exact path="/title" component={TitleScraper} />
             <Route exact path="/table" component={ConfigurableTable} />
+            <Route exact path="/heatmap" component={HeatMap} />
+            {/* <Route exact path="/heatmap" render={() => <Plot data={modifiedData} layout={layout} />} /> */}
           </Switch>
         </div>
         <Footer />

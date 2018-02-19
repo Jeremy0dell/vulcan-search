@@ -6,7 +6,6 @@ const Table = ({ tableData, sortedBy, order, handleHeaderClick }) =>
   <div id="table-show-container">
     <table id="table-body">
       <thead>
-
         <tr>
           {
             tableData[0].map((header, idx) =>
@@ -21,7 +20,7 @@ const Table = ({ tableData, sortedBy, order, handleHeaderClick }) =>
           }
         </tr>
         </thead>
-        <tbody>
+        <tbody onScroll={(a,b,c) => { console.log(a,b,c) }}>
         {
           tableData[1].map((subArray, idx) =>
           <tr key={idx}>

@@ -1,6 +1,4 @@
 import React from 'react'
-import Papa from 'papaparse'
-import { Checkbox, CheckboxGroup } from 'react-checkbox-group'
 
 const Form = ({
   headers,
@@ -17,21 +15,24 @@ const Form = ({
 }) =>
   <div id="table-forms">
     <div>
-      <div>Enter Headers here:</div>
+      <h1>Configurable Table</h1>
+      <div>Enter Column Headers:</div>
       <input
         className="input"
         value={headers}
         name="headers"
         onChange={onChange}
+        placeholder="Divide headers with commas"
       />
     </div>
     <div>
-      <div>Enter Table Values here:</div>
+      <div>Enter Table Values:</div>
       <textarea
         className="input"
         value={data}
         name="data"
         onChange={onChange}
+        placeholder="Divide values with commas and rows with a new line"
       />
     </div>
     <div>

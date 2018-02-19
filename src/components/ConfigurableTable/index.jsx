@@ -38,7 +38,9 @@ const ConfigurableTable = ({
       handleToggleChecks={handleToggleChecks}
     />
     {
-      form.headers && tabState.showColsHidden && <CheckboxGroup
+      (form.headers && tabState.showColsHidden) ? <div>
+        <div>Check to show or hide columns</div>
+        <CheckboxGroup
         id="checkbox-group"
         value={tabState.colsHidden}
         onChange={handleCheckCol}
@@ -47,25 +49,26 @@ const ConfigurableTable = ({
           tabState.showColsHidden && Papa.parse(form.headers).data[0].map((header, idx) =>
           <label key={idx}><Checkbox value={header}/>{header}</label>)
         }
-      </CheckboxGroup>
+      </CheckboxGroup></div> : <div />
     }
-    { every([tabState.showTable, form.headers, form.data], x => !!x) && <Table
-      handleHeaderClick={handleHeaderClick}
-      sortedBy={tabState.sortedBy}
-      order={tabState.order}
+    { every([tabState.showTable, form.headers, form.data], x => !!x) && tabState.showTable ?
+      <Table
+        handleHeaderClick={handleHeaderClick}
+        sortedBy={tabState.sortedBy}
+        order={tabState.order}
 
-      tableData={
-        changeSort(
-          changeQuery(
-            columnFilter(
-              arrangeTableData(
-                form.headers, form.data
-              ), tabState.colsHidden
-            ), tabState.query
-          ), tabState.sortedBy, tabState.order
-        )
-      }
-    /> }
+        tableData={
+          changeSort(
+            changeQuery(
+              columnFilter(
+                arrangeTableData(
+                  form.headers, form.data
+                ), tabState.colsHidden
+              ), tabState.query
+            ), tabState.sortedBy, tabState.order
+          )
+        }
+    /> : <div /> }
   </div>
 
 export default compose(
