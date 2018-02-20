@@ -38,6 +38,7 @@ export const layout = {
     side: 'top'
   },
   yaxis: {
+    title: 'Hour of Day',
     fixedrange: true,
     ticks: 'outside',
     dtick: 1,
@@ -95,6 +96,7 @@ export const layoutOrdered = {
     side: 'top'
   },
   yaxis: {
+    title: 'Hour of Day',
     fixedrange: true,
     ticks: 'outside',
     dtick: 1,

@@ -10,9 +10,9 @@ const Plot = createPlotlyComponent(Plotly)
 
 const HeatMap = ({ heatmap, updateHeatmap }) =>
   <div className="flex-between">
-    {console.log(heatmap, 'asdf')}
     <button
       onClick={() => updateHeatmap(heatmap === 'weekday' ? 'alphabetical' : 'weekday')}
+      style={{ marginRight: 20 }}
     >
       Click for {heatmap === 'weekday' ? 'alphabetical' : 'weekday'} order
     </button>
