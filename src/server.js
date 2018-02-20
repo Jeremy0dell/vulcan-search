@@ -18,10 +18,6 @@ app.post('/ping', function (req, res) {
   })
 })
 
-app.post('/csv', (req, res) => {
-
-})
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

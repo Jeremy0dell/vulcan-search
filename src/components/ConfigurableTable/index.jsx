@@ -51,15 +51,7 @@ const ConfigurableTable = ({
         order={tabState.order}
 
         tableData={
-          changeSort(
-            changeQuery(
-              columnFilter(
-                arrangeTableData(
-                  form.headers, form.data
-                ), tabState.colsHidden
-              ), tabState.query
-            ), tabState.sortedBy, tabState.order
-          )
+          changeSort(changeQuery(columnFilter(arrangeTableData(form.headers, form.data), tabState.colsHidden), tabState.query), tabState.sortedBy, tabState.order)
         }
     /> : <div /> }
   </div>
