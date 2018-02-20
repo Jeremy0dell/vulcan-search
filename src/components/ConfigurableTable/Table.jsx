@@ -20,6 +20,7 @@ const Table = ({ tableData, sortedBy, order, handleHeaderClick }) =>
           }
         </tr>
         </thead>
+        {!tableData[1].length && <div style={{ textAlign: 'center' }}>No records matched the specified query</div>}
         <tbody>
         {
           tableData[1].map((subArray, idx) =>

@@ -22,5 +22,9 @@ const GoogleSearch = ({ form, handleChange }) =>
   </div>
 
 export default compose(
-  formData({ title: '', websiteUrl: '', description: '' }),
+  formData({
+    title: 'Vulcan Search: Digital Marketing Solutions Powered by Data Intelligence',
+    websiteUrl: 'https://vulcansearch.com',
+    description: 'Digital marketing solutions designed to amplify performance and drive sustainable growth through multi-channel integration and cognitive technology.',
+  }),
 )(GoogleSearch)
